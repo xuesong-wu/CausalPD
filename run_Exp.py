@@ -23,7 +23,7 @@ if __name__ == '__main__':
     parser.add_argument('--root_path', type=str, default='./data/GridSZ/', help='root path of the data file, options: [GridSZ, SegmentSZ, Shanghai]')
     parser.add_argument('--data_path', type=str, default='pavement_distress.npy', help='data file')
     parser.add_argument('--ext_path', type=str, default='ext.csv', help='data file')
-    parser.add_argument('--meta_dim', type=int, default=0, help='dimension of static spatial features, set to 0 to disable static feature loading')
+    parser.add_argument('--meta_dim', type=int, default=24, help='dimension of static spatial features, set to 0 to disable static feature loading')
     parser.add_argument('--features', type=str, default='M',
                         help='forecasting task, options:[M, S, MS]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate')
     parser.add_argument('--target', type=str, default='OT', help='target feature in S or MS task')
