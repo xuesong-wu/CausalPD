@@ -45,7 +45,10 @@ def compute_attention_masks(model, setting, attention_threshold):
             attention_list.append(mean_attention)
 
     attention_array = np.concatenate(attention_list, axis=0)
-    save_path = os.path.join('./attention_maps', '/' + setting + '_att.npy')
+    save_dir = './attention_maps'
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    save_path = os.path.join(save_dir, setting + '_att.npy')
     np.save(save_path, attention_array)
     print("Attention map saved, shape:", attention_array.shape)
 
