@@ -492,11 +492,11 @@ class Exp_Main(Exp_Basic):
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
-        mae, mse, rmse, mape, mspe, rse, corr, f1 = metric(preds, trues)
-        print('rmse:{}, mae:{}, f1:{}'.format(rmse, mae, f1))
+        mse, rmse, f1 = metric(preds, trues)
+        print('rmse:{}, mse:{},f1:{}'.format(rmse, mse, f1))
         f = open("result.txt", 'a')
         f.write(setting + "  \n")
-        f.write('rmse:{}, mae:{}, f1:{}'.format(rmse, mae, f1))
+        f.write('rmse:{}, mae:{}, f1:{}'.format(rmse, mse, f1))
         f.write('\n')
         f.write('\n')
         f.close()
